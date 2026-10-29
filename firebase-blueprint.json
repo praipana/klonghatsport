@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role and Google auth details",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "editor", "viewer"] },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "TournamentData": {
+      "title": "TournamentData",
+      "description": "Stored tournament matches, teams, and announcements document",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "matches": { "type": "array" },
+        "teams": { "type": "array" },
+        "announcements": { "type": "array" },
+        "referees": { "type": "array" },
+        "updatedBy": { "type": "string" },
+        "updatedByEmail": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered Google user profile and editor roles"
+    },
+    "/tournaments/{tournamentId}": {
+      "schema": "TournamentData",
+      "description": "Tournament matches, teams and data updated by Google authenticated editors"
+    }
+  }
+}

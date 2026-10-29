@@ -1,0 +1,6 @@
+{
+  "name": "KlongHat Games - กีฬานักเรียนอำเภอคลองหาด สระแก้ว",
+  "description": "ระบบจัดการแข่งขันกีฬานักเรียนอำเภอคลองหาด จังหวัดสระแก้ว ลงทะเบียน จัดสายการแข่ง คะแนนสด การแจ้งเตือน และเกียรติบัตรออนไลน์",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
